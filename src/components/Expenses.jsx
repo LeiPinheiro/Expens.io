@@ -33,7 +33,7 @@ function Expenses() {
             }
 
             // Faz a requisição para buscar as despesas
-            const response = await axios.get('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses', {
+            const response = await axios.get('https://expens-io-api.onrender.com/api/expenses', {
                 headers: {
                     Authorization: `Bearer ${token}` // Envia o token no header
                 }
@@ -80,7 +80,7 @@ function Expenses() {
         }
 
         // Envia a requisição para criar a despesa
-        axios.post('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses', {
+        axios.post('https://expens-io-api.onrender.com/api/expenses', {
             itemname: itemName,
             price: parseFloat(itemPrice), // Converte o preço para número
             date: itemDate
@@ -112,7 +112,7 @@ function Expenses() {
         }
 
         try {
-            await axios.put(`https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses/${editItem}`, {
+            await axios.put(`https://expens-io-api.onrender.com/api/expenses/${editItem}`, {
                 itemname: updatedName || null,
                 price: updatedPrice ? parseFloat(updatedPrice) : null,
                 date: updatedDate || null
@@ -129,7 +129,7 @@ function Expenses() {
     // Deleting expense
     const deleteExpense = async (id) => {
         try {
-            await axios.delete(`https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses/${id}`);
+            await axios.delete(`https://expens-io-api.onrender.com/api/expenses/${id}`);
 
             alert('Despesa apagada com sucesso!');
             loadExpenses();
