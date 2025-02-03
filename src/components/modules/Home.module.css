@@ -1,0 +1,108 @@
+.mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--content-section-color);
+    width: 75vw;
+    height: 88vh;
+    border-radius: 5px;
+}
+
+.dataContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 10rem;
+    width: 100%;
+}
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 6rem;
+    min-width: 13rem;
+    background-color: #1b1b1b96;
+    border-radius: 5px;
+    box-shadow: rgba(10, 209, 193, 0.76) 0px 1px 0px, rgba(18, 38, 43, 0.267) 0px 0px 8px;
+    transition: ease 500ms;
+}
+
+.cardContainer:hover {
+    min-width: 16rem;
+}
+
+.iconContainer .icon {
+    font-size: 3rem;
+    color: white;
+}
+
+.textContainer {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+.topText {
+    font-size: 0.8rem;
+}
+
+
+.itensSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 69%;
+
+}
+
+.itensSection h1 {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.itensContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1b1b1b;
+    width: 60rem;
+    height: 20rem;
+    border-radius: 5px;
+    overflow-y: auto;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    ;
+    gap: 0.5em;
+    padding-top: 0.5rem;
+}
+
+.noExpensesText {
+    color: var(--second-text-color);
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.itemContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 3rem;
+    width: 95%;
+    background-color: #282829;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.itemContainer p {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    padding: 0.1rem 2rem;
+    border-radius: 5px;
+    transition: ease 500ms;
+}

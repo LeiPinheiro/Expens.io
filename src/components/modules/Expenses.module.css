@@ -1,0 +1,221 @@
+.mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--content-section-color);
+    width: 75vw;
+    height: 88vh;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--second-text-color);
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.inputsSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.inputContainer label {
+    color: var(--second-text-color);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.inputContainer input {
+    height: 2rem;
+    width: 18rem;
+    border-radius: 5px;
+    background-color: #282829;
+    border: none;
+    outline: none;
+    padding-left: 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+.buttonContainer input {
+    height: 2rem;
+    width: 10rem;
+    color: white;
+    background-color: rgba(10, 209, 193, 0.76);
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    transition: ease 700ms;
+}
+
+.buttonContainer input:hover {
+    width: 15rem;
+    text-decoration: underline;
+}
+
+.addAnExpenseText {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--second-text-color);
+}
+
+
+.itemsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1b1b1b;
+    width: 95%;
+    height: 52%;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.itemContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #282829;
+    height: 3rem;
+    width: 95%;
+    margin-top: 0.7rem;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+.btnsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btnsContainer button {
+    font-size: 1.3rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: ease 500ms;
+}
+
+#editBtn {
+    color: green;
+}
+
+#deleteBtn {
+    color: red;
+    font-size: 1.4rem;
+}
+
+#editBtn:hover {
+    font-size: 2rem;
+}
+
+#deleteBtn:hover {
+    font-size: 2rem;
+}
+
+.editContainer {
+    background-color: var(--content-section-color);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 30rem;
+    height: 24rem;
+    position: absolute;
+    top: 20%;
+    left: 42%;
+    z-index: 100%;
+    border-radius: 5px;
+    border: 2px #282829 solid;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.editContainer p {
+    font-size: 2rem;
+    color: var(--second-text-color);
+    font-weight: 500;
+}
+
+.inputsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.inputsContainer label {
+    color: var(--second-text-color);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.inputsContainer input {
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #282829;
+    padding-left: 0.5rem;
+    outline: none;
+    color: white;
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+}
+
+.editBtnsContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.editBtnsContainer button {
+    font-size: 1.2rem;
+    height: 2rem;
+    width: 7rem;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: ease 500ms;
+}
+
+.editBtnsContainer button:hover {
+    width: 7.5rem;
+}
+
+#cancelBtn {
+    background-color: red;
+
+}
+
+#saveBtn {
+    background-color: green;
+}

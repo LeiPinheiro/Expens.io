@@ -1,0 +1,91 @@
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    height: 100vh;
+}
+
+.profilePhotoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+
+.photoImageContainer {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photoImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Garante que a imagem preencha a div sem distorcer */
+}
+
+
+.profilePhotoContainer p {
+    font-weight: 600;
+    color: var(--second-text-color);
+}
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.navBar li {
+    display: flex;
+    align-items: center;
+}
+
+.listLink {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    width: 90%;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    transition: ease 500ms;
+
+}
+
+.listLink:hover {
+    background-color: #282829;
+    color: var(--active-buttons-color);
+}
+
+.active {
+    background-color: #282829;
+    color: var(--active-buttons-color);
+}
+
+.appIconContainer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.4rem;
+    font-family: 'Inter', sans-serif;
+    margin-top: 5rem;
+}
+
+#middle {
+    color: var(--active-buttons-color);
+}
+
+#final {
+    color: #0F757A;
+}

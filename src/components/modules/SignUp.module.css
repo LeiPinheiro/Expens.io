@@ -1,0 +1,9 @@
+.mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--content-section-color);
+    width: 75vw;
+    height: 88vh;
+    border-radius: 5px;
+}
