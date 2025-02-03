@@ -11,7 +11,7 @@ const PizzaChart = () => {
     // Fetch de dados da API
     useEffect(() => {
         axios
-            .get('http://localhost:3000/api/expenses', { headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` } })
+            .get('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses', { headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` } })
             .then((response) => {
                 if (Array.isArray(response.data)) {
                     const data = response.data.map((expense) => ({

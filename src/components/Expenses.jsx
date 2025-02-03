@@ -3,18 +3,17 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { use } from 'react';
 
 function Expenses() {
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
     const [itemDate, setItemDate] = useState('');
     const [expenses, setExpenses] = useState([]);
-    const [showEditConfig, setShowEditConfig] = useState(false)
-    const [editItem, setEditItem] = useState(null)
-    const [updatedName, setUpdatedName] = useState('')
-    const [updatedPrice, setUpdatedPrice] = useState('')
-    const [updatedDate, setUpdatedDate] = useState('')
+    const [showEditConfig, setShowEditConfig] = useState(false);
+    const [editItem, setEditItem] = useState(null);
+    const [updatedName, setUpdatedName] = useState('');
+    const [updatedPrice, setUpdatedPrice] = useState('');
+    const [updatedDate, setUpdatedDate] = useState('');
 
     const token = localStorage.getItem('authToken');
     if (token) {
@@ -34,7 +33,7 @@ function Expenses() {
             }
 
             // Faz a requisição para buscar as despesas
-            const response = await axios.get('http://localhost:3000/api/expenses', {
+            const response = await axios.get('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses', {
                 headers: {
                     Authorization: `Bearer ${token}` // Envia o token no header
                 }
@@ -77,11 +76,11 @@ function Expenses() {
         if (!token) {
             alert('Usuário não autenticado.');
             window.location.href = '/login';
-            return
+            return;
         }
 
         // Envia a requisição para criar a despesa
-        axios.post('http://localhost:3000/api/expenses', {
+        axios.post('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses', {
             itemname: itemName,
             price: parseFloat(itemPrice), // Converte o preço para número
             date: itemDate
@@ -113,7 +112,7 @@ function Expenses() {
         }
 
         try {
-            await axios.put(`http://localhost:3000/api/expenses/${editItem}`, {
+            await axios.put(`https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses/${editItem}`, {
                 itemname: updatedName || null,
                 price: updatedPrice ? parseFloat(updatedPrice) : null,
                 date: updatedDate || null
@@ -130,17 +129,15 @@ function Expenses() {
     // Deleting expense
     const deleteExpense = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/api/expenses/${id}`)
+            await axios.delete(`https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses/${id}`);
 
-            alert('Despesa apagada com sucesso!')
-            loadExpenses()
+            alert('Despesa apagada com sucesso!');
+            loadExpenses();
         } catch (error) {
-            alert('Erro ao apagar despesa')
-            console.error('Ocorreu um erro ao apagar despesa', error)
+            alert('Erro ao apagar despesa');
+            console.error('Ocorreu um erro ao apagar despesa', error);
         }
-    }
-
-
+    };
 
     return (
         <div className={styles.mainSection}>
@@ -169,7 +166,7 @@ function Expenses() {
                     />
                 </div>
                 <div className={styles.inputContainer}>
-                    <label htmlFor="itemDateInput">Purschase date*</label>
+                    <label htmlFor="itemDateInput">Purchase date*</label>
                     <input
                         type="date"
                         id="itemDateInput"
@@ -201,7 +198,7 @@ function Expenses() {
                                 <button id={styles.deleteBtn} onClick={() => deleteExpense(expense.id)}><MdDelete /></button>
                             </div>
                         </div>
-                    )
+                    );
                 })
                 )}
             </div>
@@ -212,7 +209,7 @@ function Expenses() {
                     <input type="text" name='editItemName' id={styles.editItemName} onChange={(event) => setUpdatedName(event.target.value)} />
                     <label htmlFor="editItemName">Edit item price</label>
                     <input type="number" name='editItemName' id={styles.editItemPrice} onChange={(event) => setUpdatedPrice(event.target.value)} />
-                    <label htmlFor="editItemName">Edit purschase date</label>
+                    <label htmlFor="editItemName">Edit purchase date</label>
                     <input type="date" name='editItemName' id={styles.editItemDate} onChange={(event) => setUpdatedDate(event.target.value)} />
                 </div>
                 <div className={styles.editBtnsContainer}>
@@ -220,12 +217,8 @@ function Expenses() {
                     <button id={styles.saveBtn} onClick={saveUpdatedItem}>Save</button>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
-
-
-
-
 
 export default Expenses;

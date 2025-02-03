@@ -27,7 +27,7 @@ function Home() {
             }
 
             // Faz a requisição para buscar as despesas
-            const response = await axios.get('http://localhost:3000/api/expenses', {
+            const response = await axios.get('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses', {
                 headers: {
                     Authorization: `Bearer ${token}` // Envia o token no header
                 }
@@ -67,7 +67,7 @@ function Home() {
                 }
 
                 // Faz a requisição para buscar o total das despesas
-                const response = await axios.get(`http://localhost:3000/api/total?userName=${userName}`, {
+                const response = await axios.get(`https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/total?userName=${userName}`, {
                     headers: {
                         Authorization: `Bearer ${token}` // Envia o token no header
                     }

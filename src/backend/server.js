@@ -9,7 +9,9 @@ import jwt from 'jsonwebtoken'
 const app = express()
 const port = 3000
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: 'https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/'
+}))
 
 // Middleware de autenticação
 const authMiddleware = (req, res, next) => {
