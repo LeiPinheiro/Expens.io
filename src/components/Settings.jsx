@@ -48,7 +48,7 @@ function Settings() {
             const decoded = jwtDecode(token);
             const userId = decoded.id;
 
-            await axios.put(`http://localhost:3000/api/expenses/update/${userId}`, {
+            await axios.put(`https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses/update/${userId}`, {
                 username: updatedName || null,
                 email: updatedEmail || null,
                 password: updatedPassword || null // Envia a senha em texto plano

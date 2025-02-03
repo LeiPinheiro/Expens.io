@@ -11,7 +11,7 @@ const SimpleBarChart = () => {
     const savingsValue = localStorage.getItem(`savings_${userName}`)
 
     // Fetch de dados da API
-    axios.get('http://localhost:3000/api/expenses', { headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` } })
+    axios.get('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/expenses', { headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` } })
         .then((response) => { // Verifique a resposta completa
             if (Array.isArray(response.data)) {
                 const data = response.data.map((expense) => ({

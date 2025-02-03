@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useState } from 'react';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000'
+    baseURL: 'https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app'
 })
 
 function SignUp() {

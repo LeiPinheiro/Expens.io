@@ -17,7 +17,7 @@ function Login() {
     // Login frontend
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('http://localhost:3000/api/login', {
+            const response = await axios.post('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/login', {
                 email,
                 password
             });
@@ -45,7 +45,7 @@ function Login() {
 
     const logAsAdmin = async () => {
         try {
-            const response = await axios.post('http://localhost:3000/api/login', {
+            const response = await axios.post('https://expensio-f0qwzt6rr-lei-pinheiros-projects.vercel.app/api/login', {
                 email: 'adm@gmail.com',
                 password: '321'
             })
