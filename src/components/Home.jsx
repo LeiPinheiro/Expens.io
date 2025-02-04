@@ -1,13 +1,13 @@
 import styles from './modules/Home.module.css';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useExpenses } from './hooks/homejsx_hooks/useExpenses';
+import { useExpenses } from './hooks/home_hooks/useExpenses';
+import useAuth from './hooks/home_hooks/useAuth.js';
 
 // ICONS
 import { MdSavings } from "react-icons/md";
 import { AiFillShopping } from "react-icons/ai";
 import { FaClipboardList } from "react-icons/fa";
-import { useAuth } from './hooks/homejsx_hooks/useAuth';
+
 
 function Home() {
     useAuth

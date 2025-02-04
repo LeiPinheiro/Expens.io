@@ -1,4 +1,4 @@
-// src/hooks/useSettings.js
+
 import { useState } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';

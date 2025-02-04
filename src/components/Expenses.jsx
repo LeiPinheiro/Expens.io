@@ -2,7 +2,7 @@
 import styles from './modules/Expenses.module.css';
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-import useExpenses from '../hooks/useExpenses';
+import useExpenses from './hooks/expenses_hooks/useExpenses';
 
 function Expenses() {
     const {

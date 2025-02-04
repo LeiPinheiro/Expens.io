@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import styles from './modules/Settings.module.css';
 import { IoIosAdd } from "react-icons/io";
-import useSettings from '../hooks/useSettings';
+import useSettings from './hooks/settings_hooks/useSettings.js'
 
 function Settings() {
     const {
