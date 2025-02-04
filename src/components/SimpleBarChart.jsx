@@ -10,7 +10,6 @@ const SimpleBarChart = () => {
     const userName = localStorage.getItem('userName')
     const savingsValue = localStorage.getItem(`savings_${userName}`)
 
-    // Fetch de dados da API
     axios.get('https://expens-io-api.onrender.com/api/expenses', { headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` } })
         .then((response) => { // Verifique a resposta completa
             if (Array.isArray(response.data)) {

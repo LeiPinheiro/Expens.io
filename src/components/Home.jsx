@@ -1,105 +1,22 @@
 import styles from './modules/Home.module.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useExpenses } from './hooks/homejsx_hooks/useExpenses';
 
 // ICONS
 import { MdSavings } from "react-icons/md";
 import { AiFillShopping } from "react-icons/ai";
 import { FaClipboardList } from "react-icons/fa";
+import { useAuth } from './hooks/homejsx_hooks/useAuth';
 
 function Home() {
+    useAuth
+    const { expenses, totalSpent, loadExpenses } = useExpenses()
     const userName = localStorage.getItem('userName');
     const [savings, setSavings] = useState('');
-    const [expenses, setExpenses] = useState([]);
-    const [totalSpent, setTotalSpent] = useState(0)
-
-
-    // Função para carregar as despesas do usuário
-    const loadExpenses = async () => {
-        try {
-            const token = localStorage.getItem('authToken');
-
-            // Verifica se o token está presente
-            if (!token) {
-                alert('Usuário não autenticado. Redirecionando para o login...');
-                window.location.href = '/login';
-                return;
-            }
-
-            // Faz a requisição para buscar as despesas
-            const response = await axios.get('https://expens-io-api.onrender.com/api/expenses', {
-                headers: {
-                    Authorization: `Bearer ${token}` // Envia o token no header
-                }
-            });
-
-            console.log('Resposta das despesas:', response.data);
-
-            // Verifica se a resposta é um array e atualiza o estado
-            if (Array.isArray(response.data)) {
-                setExpenses(response.data);
-            } else {
-                console.error('A resposta não é um array', response.data);
-            }
-        } catch (error) {
-            console.error('Erro ao buscar despesas:', error);
-
-            // Trata erros de autenticação (token inválido ou expirado)
-            if (error.response?.status === 401 || error.response?.status === 403) {
-                alert('Sessão expirada. Faça login novamente.');
-                window.location.href = '/login';
-            }
-        }
-    };
-
-    // Fetching total spent by user
-    useEffect(() => {
-        const fetchTotal = async () => {
-            try {
-                const token = localStorage.getItem('authToken');
-                const userName = localStorage.getItem('userName'); // Caso precise do nome do usuário
-
-                // Verifica se o token está presente
-                if (!token) {
-                    alert('Usuário não autenticado. Redirecionando para o login...');
-                    window.location.href = '/login';
-                    return;
-                }
-
-                // Faz a requisição para buscar o total das despesas
-                const response = await axios.get(`https://expens-io-api.onrender.com/api/total?userName=${userName}`, {
-                    headers: {
-                        Authorization: `Bearer ${token}` // Envia o token no header
-                    }
-                });
-
-                const total = parseFloat(response.data.total) || 0; // Garante que seja número
-                setTotalSpent(total); // Atualiza o estado com o total gasto
-            } catch (error) {
-                console.error('Erro ao buscar total:', error);
-
-                // Trata erros de autenticação (token inválido ou expirado)
-                if (error.response?.status === 401 || error.response?.status === 403) {
-                    alert('Sessão expirada. Faça login novamente.');
-                    window.location.href = '/login';
-                }
-            }
-        };
-
-        fetchTotal(); // Chama a função para pegar o total das despesas do usuário
-
-        const savedSavings = localStorage.getItem(`savings_${userName}`);
-        if (savedSavings) {
-            setSavings(savedSavings);
-        }
-    }, []); // O useEffect será executado apenas uma vez, na primeira renderização
-
-
 
     useEffect(() => {
         const savedSavings = localStorage.getItem(`savings_${userName}`);
-
-        loadExpenses();
 
         if (savedSavings) {
             setSavings(savedSavings);

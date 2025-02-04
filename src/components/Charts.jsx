@@ -1,4 +1,4 @@
-import { PieChart } from 'recharts'
+
 import styles from './modules/Charts.module.css'
 import SimpleBarChart from './SimpleBarChart'
 import PizzaChart from './PizzaChart'

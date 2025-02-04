@@ -13,7 +13,6 @@ function SignUp() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    // User register
     function newUser() {
         api.post('/api/register', {
             username,

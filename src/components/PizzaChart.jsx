@@ -6,9 +6,8 @@ const PizzaChart = () => {
     const [expensesData, setExpensesData] = useState([]);
     const userName = localStorage.getItem('userName');
 
-    const colors = ['#FF6347', 'rgb(14, 158, 144)', '#90EE90', '#32CD32', '#87CEEB', '#DDA0DD']; // Adicione cores que você preferir
+    const colors = ['#FF6347', 'rgb(14, 158, 144)', '#90EE90', '#32CD32', '#87CEEB', '#DDA0DD'];
 
-    // Fetch de dados da API
     useEffect(() => {
         axios
             .get('https://expens-io-api.onrender.com/api/expenses', { headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` } })
@@ -28,7 +27,6 @@ const PizzaChart = () => {
             });
     }, []);
 
-    // Customizando o rótulo do gráfico de pizza
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
         const RADIAN = Math.PI / 180;
         const radius = outerRadius + 10;
