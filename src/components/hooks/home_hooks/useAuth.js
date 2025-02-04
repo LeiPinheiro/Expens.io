@@ -1,5 +1,4 @@
-
-export function useAuth() {
+function useAuth() {
     const token = localStorage.getItem('authToken');
 
     if (!token) {
@@ -7,3 +6,5 @@ export function useAuth() {
         window.location.href = '/login';
     }
 }
+
+export default useAuth
