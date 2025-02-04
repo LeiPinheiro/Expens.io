@@ -20,6 +20,7 @@
 ## ⚙️ Funcionalidades
 * **Login e registro**: Usuários podem logar e se registrar
 * **Edição de dados**: Usuários podem editar email, senha e nome caso precisem
+* **Salvar poupança**: Usuários podem salvar o quanto de dinheiro estão guardando
 * **Foto de perfil**: Cada usuário pode colocar e editar sua própria foto de perfil
 * **CRUD de despesas**: Usuários podem editar nome, preço e data de compra de uma despesa, também podem apagar
 * **Analisar despesas**: Também é possível visualizar gastos em gráficos
