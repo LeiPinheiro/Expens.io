@@ -1,6 +1,6 @@
 # Expens.io
 > [!NOTE]
-> Neste diretório estão apenas os arquivos frontend do projeto, caso tenha interesse no backend dê uma olhada [aqui!](https://github.com/LeiPinheiro/Expens.io-API)
+> **Neste diretório estão apenas os arquivos frontend do projeto, caso tenha interesse no backend dê uma olhada [aqui!](https://github.com/LeiPinheiro/Expens.io-API)**
 
 ***Expens.io*** é uma plataforma de controle de despesas, criada para ajudar as pessoas a organizarem e gerenciarem sua vida financeira de maneira mais eficiente e prática. 
 
